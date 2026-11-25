@@ -133,7 +133,7 @@ export const projects: Project[] = [
 export const featured = projects.filter(project => project.cover);
 export const education = [
   ["2026.01 – 12 예정", "삼성청년SW·AI아카데미 15기", "1학기 925시간 이수. 웹, AI, 임베디드, 알고리즘 실습"],
-  ["2020.03 – 2026.02", "상명대학교 서울캠퍼스", "전기공학전공 공학사, 학점 3.78/4.5"]
+  ["2020.03 – 2026.02", "상명대학교 서울캠퍼스", "전기공학전공 공학사"]
 ];
 export const awards = [
   ["2026.06", "고용노동부 장관상", "SSAFY X Kakao Tech Bootcamp AI Hackathon"],
