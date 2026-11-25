@@ -1,0 +1,6 @@
+---
+import ProjectIndex from "../../../components/project-index.astro";
+import { fields, type Field } from "../../../data/portfolio";
+export function getStaticPaths() { return Object.keys(fields).map(field => ({ params: { field } })); }
+---
+<ProjectIndex field={Astro.params.field as Field} />

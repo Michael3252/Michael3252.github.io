@@ -1,0 +1,18 @@
+---
+import Icon from "./icon.astro";
+import { fields, type Project } from "../data/portfolio";
+interface Props { project: Project; }
+const { project: p } = Astro.props;
+---
+<article class={"project-card theme-" + p.field}>
+  <a class="card-link" href={"/projects/" + p.slug + "/"}>
+    <div class={"project-cover cover-" + p.slug}>
+      <img src={"/media/" + p.cover + ".webp"} alt={p.coverAlt} loading="lazy" width="640" height="400" />
+      {p.slug === "quality-platform" && <span class="video-mark">가상 데이터 예시</span>}
+      {p.slug === "maritime-search" && <span class="video-mark">모의 데이터 데모</span>}
+      {p.slug === "jetank" && <span class="video-mark" aria-label="시연 영상"><svg width="10" height="11" viewBox="0 0 10 11" aria-hidden="true"><path fill="currentColor" d="M1 0v11l9-5.5z"/></svg>1:31</span>}
+    </div>
+    <div class="card-meta"><span class="field-label">{fields[p.field]}</span><span>{p.tags[0]}</span></div>
+    <div class="card-title"><h3>{p.title}</h3><Icon name="external" size={19} /></div><p>{p.summary}</p>
+  </a>
+</article>

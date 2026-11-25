@@ -1,0 +1,27 @@
+---
+import Site from "../layouts/site.astro";
+import Icon from "../components/icon.astro";
+import ArmFigure from "../components/arm-figure.astro";
+import Card from "../components/project-card.astro";
+import { awards, education, featured } from "../data/portfolio";
+---
+<Site title="홈">
+  <section class="hero"><div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>소프트웨어 개발자<br/><strong>김현석<span class="name-stop">.</span></strong></h1>
+      <p>웹서비스를 만들고 운영합니다.<br class="wide-br"/> AI의 인식과 예측을 실제 로봇의 움직임으로 연결합니다.</p>
+      <div class="hero-actions"><a href="#selected" class="btn primary">대표 프로젝트 보기 <Icon name="arrow"/></a><a href="/resume/" class="btn secondary"><Icon name="file" size={17}/>이력서 보기</a></div>
+      <div class="hero-profile"><img src="/media/portrait.webp" width="38" height="47" alt="김현석 프로필 사진"/><div><strong>상명대학교 전기공학 학사</strong><span>삼성청년SW·AI아카데미 15기</span></div></div>
+    </div>
+    <ArmFigure />
+  </div></section>
+  <section class="wrap works" id="selected" aria-labelledby="works-title">
+    <div class="section-head"><h2 id="works-title">대표 프로젝트 <span class="count">{String(featured.length).padStart(2,"0")}</span></h2><a class="text-link" href="/projects/">전체 프로젝트 <Icon name="arrow" size={17}/></a></div>
+    <div class="card-grid">{featured.map(project => <Card project={project}/>)}</div>
+  </section>
+  <section class="experience"><div class="wrap experience-inner">
+    <div class="profile-thumb"><h2>학력과 수상</h2><a class="text-link" href="/resume/">이력서 보기 <Icon name="arrow" size={16}/></a></div>
+    <div class="experience-cols"><div><h3>학력 및 교육</h3>{education.map(([date, title, desc])=><div class="cv-brief"><small>{date}</small><strong>{title}</strong><p>{desc}</p></div>)}</div>
+    <div><h3>주요 수상</h3>{[awards[0],awards[1],awards[3]].map(([date,title,org])=><div class="cv-brief"><small>{date}</small><strong>{title}</strong><p>{org}</p></div>)}</div></div>
+  </div></section>
+</Site>

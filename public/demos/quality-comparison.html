@@ -1,0 +1,266 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>PJ36293 결함 TC별 TP 실행 결과 v2</title>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;margin:24px;color:#222;background:#fafafa}
+h1{font-size:22px;border-bottom:3px solid #1a5276;padding-bottom:8px}
+h2{font-size:17px;margin-top:34px;background:#1a5276;color:#fff;padding:8px 12px;border-radius:4px}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:13px;background:#fff}
+th,td{border:1px solid #ccc;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#eaf2f8}
+.ok{color:#1e8449;font-weight:bold}.nok{color:#c0392b;font-weight:bold}
+.mid{color:#2471a3}.na{color:#999}
+.badge{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:bold;color:#fff}
+.Open{background:#c0392b}.Submitted{background:#2471a3}.Resolved{background:#1e8449}
+.meta{color:#555;font-size:13px}
+.title{max-width:720px}
+.none{color:#999;font-style:italic}
+</style></head><body>
+<h1>PJ36293 (DEV) 최근 한 달 Open/Submitted/Resolved 결함 &rarr; TC별 ARC26B FVT TP 실행 결과 (v2: 실행 이력 있는 TP만 표기)</h1>
+<p class="meta">PLM 폴더: PJ36293 (DEV) &middot; BLX ARC26B &middot; 등록일 20261010~20261110 &middot; Open 5 + Submitted 1 + Resolved 4 = 10건 &middot; 비교 TP: ARC26B_ALL_TP.csv의 FVT TP 13건 (state=1), 미등록 행 제외 &middot; 생성일: 2026-11-10</p>
+<h2>TC 연결 결함: 15개 TC / 5건</h2>
+<h2>요약</h2><table><tr><th>TC</th><th>Feature</th><th>연관 결함 수</th><th>ARC26B FVT TP 중 실행 이력</th><th>NOK 발생 FVT TP</th></tr>
+<tr><td>5215985</td><td>ALARM-AF01415</td><td>1</td><td>8 / 13</td><td>91391</td></tr>
+<tr><td>4134683</td><td>MIMO-MF03237</td><td>1</td><td>8 / 13</td><td>91391, 92422</td></tr>
+<tr><td>5510613</td><td>SYNC-SF01825</td><td>1</td><td>7 / 13</td><td>91391, 93147</td></tr>
+<tr><td>5865542</td><td>SYNC-SF02064</td><td>1</td><td>7 / 13</td><td>91391, 92422</td></tr>
+<tr><td>4356641</td><td>CA-CF02926</td><td>1</td><td>8 / 13</td><td>91866, 92155</td></tr>
+<tr><td>3888211</td><td>CA-CF04863</td><td>1</td><td>5 / 13</td><td>91866</td></tr>
+<tr><td>3750969</td><td>VOICE-VF00308</td><td>1</td><td>3 / 13</td><td>91866</td></tr>
+<tr><td>4537871</td><td>VOICE-VF01477</td><td>1</td><td>8 / 13</td><td>91391, 91866</td></tr>
+<tr><td>3965386</td><td>PM-PF01600</td><td>1</td><td>10 / 13</td><td>91866, 92185</td></tr>
+<tr><td>4814714</td><td>ALARM-AF02620</td><td>1</td><td>6 / 13</td><td>91866</td></tr>
+<tr><td>3879829</td><td>CA-CF04426</td><td>1</td><td>8 / 13</td><td>91866, 93147</td></tr>
+<tr><td>4098646</td><td>MIMO-MF02021</td><td>1</td><td>5 / 13</td><td>91866</td></tr>
+<tr><td>3809758</td><td>PM-PF00266</td><td>1</td><td>4 / 13</td><td>91866</td></tr>
+<tr><td>4261055</td><td>SEC-SF00309</td><td>1</td><td>6 / 13</td><td>91866</td></tr>
+<tr><td>3665290</td><td>RU-RF00163</td><td>1</td><td>10 / 13</td><td>91866</td></tr>
+</table>
+<h2>TC 5215985</h2>
+<p class="meta">ALARM-AF01415 &middot; Fault propagation - Long-run stability</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261025-055381</td><td><span class="badge Submitted">Submitted</span></td><td>2026-10-25 11:45:07</td><td class="title">[RVT/F][BLX ARC26B][NR] SW 업그레이드 후 alarm 미해제</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91664</td><td>ORN 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="na">READY 1</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 8건, 그중 TEST_NOK 발생 TP: 91391 &middot; 전체 TP(전 주기 포함) 이력: 34건</p>
+<h2>TC 4134683</h2>
+<p class="meta">MIMO-MF03237 &middot; Antenna tilt control enhancement - Boundary</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261025-055381</td><td><span class="badge Submitted">Submitted</span></td><td>2026-10-25 11:45:07</td><td class="title">[RVT/F][BLX ARC26B][NR] SW 업그레이드 후 alarm 미해제</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="nok">TEST NOK 2</span></td></tr>
+<tr><td>91664</td><td>ORN 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="mid">TESTING 1</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="nok">TEST NOK 2</span> <span class="na">PAUSED 1</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 8건, 그중 TEST_NOK 발생 TP: 91391, 92422 &middot; 전체 TP(전 주기 포함) 이력: 31건</p>
+<h2>TC 5510613</h2>
+<p class="meta">SYNC-SF01825 &middot; GNSS holdover - Negative</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261025-055381</td><td><span class="badge Submitted">Submitted</span></td><td>2026-10-25 11:45:07</td><td class="title">[RVT/F][BLX ARC26B][NR] SW 업그레이드 후 alarm 미해제</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="nok">TEST NOK 3</span></td></tr>
+<tr><td>91664</td><td>ORN 26B NR FVT</td><td><span class="na">SKIPPED 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="mid">TESTING 3</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="na">SKIPPED 3</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="nok">TEST NOK 3</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 7건, 그중 TEST_NOK 발생 TP: 91391, 93147 &middot; 전체 TP(전 주기 포함) 이력: 31건</p>
+<h2>TC 5865542</h2>
+<p class="meta">SYNC-SF02064 &middot; GNSS holdover enhancement - Long-run stability</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261025-055381</td><td><span class="badge Submitted">Submitted</span></td><td>2026-10-25 11:45:07</td><td class="title">[RVT/F][BLX ARC26B][NR] SW 업그레이드 후 alarm 미해제</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="nok">TEST NOK 2</span></td></tr>
+<tr><td>91664</td><td>ORN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="na">READY 1</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="na">SKIPPED 1</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 1</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 7건, 그중 TEST_NOK 발생 TP: 91391, 92422 &middot; 전체 TP(전 주기 포함) 이력: 24건</p>
+<h2>TC 4356641</h2>
+<p class="meta">CA-CF02926 &middot; SCell activation enhancement - Multi-cell</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261014-268854</td><td><span class="badge Open">Open</span></td><td>2026-10-14 10:46:36</td><td class="title">[RVT/F][BLX ARC26B][LTE] 대기 → 연결 전환 시 호출 응답 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 2</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 1</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="na">SKIPPED 2</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 8건, 그중 TEST_NOK 발생 TP: 91866, 92155 &middot; 전체 TP(전 주기 포함) 이력: 16건</p>
+<h2>TC 3888211</h2>
+<p class="meta">CA-CF04863 &middot; Cross-carrier scheduling extension - Basic</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261014-268854</td><td><span class="badge Open">Open</span></td><td>2026-10-14 10:46:36</td><td class="title">[RVT/F][BLX ARC26B][LTE] 대기 → 연결 전환 시 호출 응답 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 3</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 5건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 24건</p>
+<h2>TC 3750969</h2>
+<p class="meta">VOICE-VF00308 &middot; Voice call setup - Interop</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261014-268854</td><td><span class="badge Open">Open</span></td><td>2026-10-14 10:46:36</td><td class="title">[RVT/F][BLX ARC26B][LTE] 대기 → 연결 전환 시 호출 응답 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 3건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 21건</p>
+<h2>TC 4537871</h2>
+<p class="meta">VOICE-VF01477 &middot; Voice codec adaptation enhancement - Basic</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261014-268854</td><td><span class="badge Open">Open</span></td><td>2026-10-14 10:46:36</td><td class="title">[RVT/F][BLX ARC26B][LTE] 대기 → 연결 전환 시 호출 응답 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 1</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 3</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="na">READY 1</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 8건, 그중 TEST_NOK 발생 TP: 91391, 91866 &middot; 전체 TP(전 주기 포함) 이력: 29건</p>
+<h2>TC 3965386</h2>
+<p class="meta">PM-PF01600 &middot; KPI report enhancement - Basic</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261014-268854</td><td><span class="badge Open">Open</span></td><td>2026-10-14 10:46:36</td><td class="title">[RVT/F][BLX ARC26B][LTE] 대기 → 연결 전환 시 호출 응답 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="mid">TESTING 3</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="nok">TEST NOK 2</span> <span class="mid">TESTING 1</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="na">SKIPPED 2</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="na">READY 1</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="na">SKIPPED 1</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 10건, 그중 TEST_NOK 발생 TP: 91866, 92185 &middot; 전체 TP(전 주기 포함) 이력: 16건</p>
+<h2>TC 4814714</h2>
+<p class="meta">ALARM-AF02620 &middot; Alarm history query - Negative</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261010-679236</td><td><span class="badge Open">Open</span></td><td>2026-10-10 10:58:56</td><td class="title">[RVT/F][BLX ARC26B][LTE] Cell 경계에서 음성 호 끊김 간헐 발생</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="na">SKIPPED 2</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 6건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 19건</p>
+<h2>TC 3879829</h2>
+<p class="meta">CA-CF04426 &middot; Cross-carrier scheduling enhancement - Multi-cell</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261010-679236</td><td><span class="badge Open">Open</span></td><td>2026-10-10 10:58:56</td><td class="title">[RVT/F][BLX ARC26B][LTE] Cell 경계에서 음성 호 끊김 간헐 발생</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92908</td><td>LUX 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 8건, 그중 TEST_NOK 발생 TP: 91866, 93147 &middot; 전체 TP(전 주기 포함) 이력: 17건</p>
+<h2>TC 4098646</h2>
+<p class="meta">MIMO-MF02021 &middot; MU-MIMO extension - Long-run stability</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261010-679236</td><td><span class="badge Open">Open</span></td><td>2026-10-10 10:58:56</td><td class="title">[RVT/F][BLX ARC26B][LTE] Cell 경계에서 음성 호 끊김 간헐 발생</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 5건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 9건</p>
+<h2>TC 3809758</h2>
+<p class="meta">PM-PF00266 &middot; PM counter collection - Multi-cell</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261031-087379</td><td><span class="badge Open">Open</span></td><td>2026-10-31 16:58:16</td><td class="title">[RVT/F][BLX ARC26B][LTE] Cell ID 변경 후 인접 Cell 정보 미갱신</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span> <span class="mid">TESTING 2</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 4건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 23건</p>
+<h2>TC 4261055</h2>
+<p class="meta">SEC-SF00309 &middot; IPsec tunnel - Basic</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261031-087379</td><td><span class="badge Open">Open</span></td><td>2026-10-31 16:58:16</td><td class="title">[RVT/F][BLX ARC26B][LTE] Cell ID 변경 후 인접 Cell 정보 미갱신</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 1</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="na">SKIPPED 2</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92912</td><td>AUR 26B LTE FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 6건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 16건</p>
+<h2>TC 3665290</h2>
+<p class="meta">RU-RF00163 &middot; RU reset recovery - Load</p>
+<table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261026-395831</td><td><span class="badge Resolved">Resolved</span></td><td>2026-10-26 13:27:57</td><td class="title">[RVT/F][BLX ARC26B][LTE] RU 재부팅 후 cell 복구 지연</td></tr>
+</table>
+<table><tr><th>TP_ID</th><th>TP Name</th><th>실행 결과 (TP 전체 이력 카운트)</th></tr>
+<tr><td>91391</td><td>BLX 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>91479</td><td>ORN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>91866</td><td>BLX 26B LTE FVT</td><td><span class="nok">TEST NOK 3</span></td></tr>
+<tr><td>91928</td><td>ZEN 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92155</td><td>MRA 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92185</td><td>AUR 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>92422</td><td>VEX 26B NR FVT</td><td><span class="ok">TEST OK 2</span></td></tr>
+<tr><td>92511</td><td>ZEN 26B LTE FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+<tr><td>93147</td><td>SOL 26B NR FVT</td><td><span class="ok">TEST OK 1</span></td></tr>
+<tr><td>93594</td><td>QTL 26B NR FVT</td><td><span class="ok">TEST OK 3</span></td></tr>
+</table>
+<p class="meta">ARC26B FVT TP 13건 중 TC 등록/실행 이력 있는 TP: 10건, 그중 TEST_NOK 발생 TP: 91866 &middot; 전체 TP(전 주기 포함) 이력: 24건</p>
+<h2>TC 미연결 결함 (testCaseId 없음)</h2><table><tr><th>결함 코드</th><th>상태</th><th>등록일</th><th class="title">제목</th></tr>
+<tr><td>P261012-304417</td><td><span class="badge Resolved">Resolved</span></td><td>2026-10-12 12:58:20</td><td class="title">[RVT/F][BLX ARC26B][NR] 설정 변경 후 통계 항목 일부 미수집</td></tr>
+<tr><td>P261016-518260</td><td><span class="badge Open">Open</span></td><td>2026-10-16 11:17:31</td><td class="title">[RVT/P][BLX ARC26B][LTE] 장시간 운용 후 관리 화면 응답 지연</td></tr>
+<tr><td>P261021-072935</td><td><span class="badge Resolved">Resolved</span></td><td>2026-10-21 15:29:35</td><td class="title">[RVT/F][BLX ARC26B][NR] Cell 잠금 해제 후 방송 정보 갱신 지연</td></tr>
+<tr><td>P261029-641108</td><td><span class="badge Resolved">Resolved</span></td><td>2026-10-29 09:33:23</td><td class="title">[RVT/F][BLX ARC26B][LTE] 인접 Cell 자동 등록 결과 중복 표시</td></tr>
+<tr><td>P261105-229574</td><td><span class="badge Open">Open</span></td><td>2026-11-05 11:55:13</td><td class="title">[RVT/P][BLX ARC26B][NR] 장비 재시작 후 시각 동기 복구 지연</td></tr>
+</table><aside aria-label="자료 안내" style="position:fixed;bottom:12px;right:12px;z-index:9999;background:#fff;color:#263445;border:1px solid #c9d3dc;border-radius:8px;padding:10px 14px;font:500 13px/1.5 system-ui,sans-serif;box-shadow:0 2px 12px #0000000d">포트폴리오 시연용 가상 데이터</aside></body></html>

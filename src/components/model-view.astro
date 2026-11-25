@@ -1,0 +1,32 @@
+---
+import Icon from "./icon.astro";
+---
+<div class="model-view" data-viewer>
+  <div class="model-stage"><img src="/media/so101.webp" alt="SO-ARM101 관절과 그리퍼 구조 렌더링" width="1040" height="1321" loading="lazy" /><canvas hidden aria-label="회전 가능한 SO-ARM101 구조 설명 모델"></canvas></div>
+  <div class="model-bar"><button class="btn primary" type="button" data-open><Icon name="cube" size={18} />3D 모델 열기</button>
+    <div class="model-controls" hidden><button type="button" data-left aria-label="모델 왼쪽 회전">왼쪽 회전</button><button type="button" data-right aria-label="모델 오른쪽 회전">오른쪽 회전</button><button type="button" data-reset>시점 초기화</button></div>
+    <span role="status" aria-live="polite"></span>
+  </div>
+</div>
+<p class="caption">SO-ARM101 공식 형상의 구조 설명용 모델입니다. <a href="/models/so101-notice.txt">출처 및 변환 내역</a> / <a href="/models/so101-license.txt">라이선스</a></p>
+<script>
+  const root = document.querySelector<HTMLElement>("[data-viewer]");
+  if (root) {
+    const opener = root.querySelector<HTMLButtonElement>("[data-open]")!;
+    const status = root.querySelector("[role=status]")!;
+    opener.addEventListener("click", async () => {
+      opener.disabled = true;
+      status.textContent = "모델을 불러오는 중입니다.";
+      try {
+        const { showModel } = await import("../scripts/arm-viewer");
+        await showModel(root);
+        opener.hidden = true;
+        root.querySelector<HTMLButtonElement>("[data-left]")!.focus();
+        status.textContent = "드래그하거나 회전 버튼을 사용하세요.";
+      } catch {
+        opener.disabled = false;
+        status.textContent = "3D 보기를 열지 못했습니다. 위 이미지로 구조를 확인하거나 다시 시도하세요.";
+      }
+    });
+  }
+</script>

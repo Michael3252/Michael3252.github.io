@@ -1,24 +1,34 @@
-# Michael3252.github.io
+# 김현석 개발자 포트폴리오
 
-김현석의 취업용 개발자 포트폴리오를 위한 기획 및 작업 인계 문서입니다.
+웹서비스, AI 응용과 로봇 제어 경험을 소개하는 한국어 포트폴리오입니다. Astro와 TypeScript로 홈, 전체 프로젝트 목록, 분야별 목록, 프로젝트 상세 12개, 인쇄용 이력서와 404 페이지를 생성합니다.
 
-현재는 **문서 인계 단계**입니다. 구현을 시작했으나 사용자가 Lightsail 작업 중단과 로컬 컴퓨터로의 이관을 요청했습니다. 이번 커밋에는 문서만 포함하며, 완성된 웹사이트나 배포 결과물은 포함하지 않습니다.
+## 로컬 실행
 
-## 읽는 순서
-
-1. [작업 인계](docs/handoff.md): 현재 상태, 재개 순서, 서버에 남은 파일을 가져오는 방법
-2. [구현 계획](docs/portfolio-plan.md): 콘셉트, 페이지 구성, 디자인과 동작
-3. [콘텐츠 기준](docs/project-content.md): 소개, 프로젝트별 개인 역할, 학력과 수상
-4. [자료 안내](docs/assets.md): 사진, 영상, 서비스 화면, SO-ARM101 모델 출처
-5. [작업 지침](AGENTS.md): 사실 표현과 로컬 작업 범위
-
-## 로컬에서 시작하기
+Node.js 24와 npm을 사용합니다.
 
 ```bash
-git clone https://github.com/Michael3252/Michael3252.github.io.git
-cd Michael3252.github.io
+npm ci
+npm run dev
 ```
 
-이미 복제한 저장소라면 main 브랜치에서 `git pull --ff-only`로 문서를 받습니다. 이후 위 인계 문서에 따라 로컬에서 구현을 재개합니다.
+개발 서버가 출력하는 로컬 주소에서 확인합니다. 프로덕션 결과를 검사하려면 다음 순서로 실행합니다.
 
-사이트의 목표 주소는 [michael3252.github.io](https://michael3252.github.io)이며, 현재 배포 완료를 뜻하지 않습니다.
+```bash
+npm run check
+npm run build
+npm test
+npm run preview
+```
+
+## 콘텐츠와 자료
+
+- [프로젝트 데이터](src/data/portfolio.ts)에서 프로젝트 본문, 학력, 수상, 자격과 공개 연락처를 관리합니다.
+- [프로젝트 콘텐츠 기준](docs/project-content.md)에 개인 역할과 팀 결과의 근거를 정리했습니다.
+- [미디어](public/media)에는 실제 서비스 캡처, 수상 및 참여 사진, JETANK 시연 영상과 구조 설명용 렌더링이 있습니다.
+- [데모](public/demos)에는 가상 데이터로 구성한 삼성청년SW·AI아카데미 기업연계 프로젝트의 HTML 예시 4개가 있습니다.
+- SO-ARM101은 공식 형상으로 만든 정적 이미지부터 표시합니다. UMI 상세에서 3D 모델 열기를 누르면 뷰어와 GLB가 로드됩니다. [모델 출처 및 변환 내역](public/models/so101-notice.txt)
+- [작업 인계](docs/handoff.md), [계획](docs/portfolio-plan.md), [자료 안내](docs/assets.md)는 초기 문서 커밋 시점의 기록입니다.
+
+## GitHub Pages
+
+[배포 워크플로](.github/workflows/pages.yml)는 main 브랜치에 push하거나 수동으로 실행하면 타입 검사, 정적 빌드, 링크 및 자료 검사를 거친 dist 폴더를 GitHub Pages에 배포합니다. 저장소의 Settings → Pages에서 소스를 GitHub Actions로 지정합니다.

@@ -1,0 +1,19 @@
+---
+import Site from "../layouts/site.astro";
+import Icon from "../components/icon.astro";
+import { awards, contact, credentials, education, featured } from "../data/portfolio";
+---
+<Site title="이력서">
+  <article class="wrap resume page-content">
+    <div class="section-head resume-tools"><a class="back-link" href="/"><Icon name="back" size={16}/>소개로</a><button class="btn secondary" data-print type="button"><Icon name="print" size={17}/>인쇄 / PDF 저장</button></div>
+    <header class="resume-head"><img src="/media/portrait.webp" width="90" height="120" alt="김현석 프로필 사진"/><div><h1>김현석 <span>소프트웨어 개발자</span></h1><p>웹서비스를 개발하고 운영하며, AI의 인식과 예측 결과를 실제 로봇의 동작으로 연결합니다.</p><div class="resume-contacts"><a href={"mailto:"+contact.email}>{contact.email}</a><a href={contact.github}>github.com/Michael3252</a></div></div></header>
+    <section class="cv-section"><h2>학력 및 교육</h2><div>{education.map(([date,title,desc])=><div class="cv-line"><small>{date}</small><div><strong>{title}</strong><p>{desc}</p></div></div>)}</div></section>
+    <section class="cv-section"><h2>대표 프로젝트</h2><div>{featured.map(p=><div class="cv-line cv-project"><small>{p.period || "로봇 학습"}</small><div><a href={"/projects/"+p.slug+"/"}><strong>{p.title}</strong></a>{p.slug === "quality-platform" && <p>삼성전자 네트워크사업부, SSAFY 기업연계 프로젝트 참여</p>}<p>{p.role}</p></div></div>)}</div></section>
+    <section class="cv-section cv-awards"><h2>수상</h2><div>{awards.map(([date,title,org])=><div class="cv-line"><small>{date}</small><div><strong>{title}</strong><p>{org}</p></div></div>)}</div></section>
+    <section class="cv-section"><h2>자격 및 어학</h2><div class="qualification-list">{credentials.map(([date,title])=><div class="cv-line"><small>{date}</small><strong>{title}</strong></div>)}</div></section>
+    <section class="cv-section"><h2>기타 활동</h2><div><div class="cv-line"><small>2024.06 – 11</small><div><strong>학수고대 고등학생 학습 멘토링</strong><p>은평교육복지센터, 총 20회 104시간 교육 봉사</p></div></div><div class="cv-line"><small>2021.09 – 2023.06</small><div><strong>공군 전술항공통신체계정비 복무</strong><p>전술 통신장비 운용, 점검 및 유지보수 지원</p></div></div></div></section>
+  </article>
+</Site>
+<script>
+  document.querySelector("[data-print]")?.addEventListener("click", () => window.print());
+</script>

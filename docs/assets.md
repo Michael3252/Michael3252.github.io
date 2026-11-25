@@ -1,5 +1,13 @@
 # 사진, 영상과 모델 자료 안내
 
+## 2026.11.25 로컬 구현에 사용한 자료
+
+- `public/media/interface-map.webp`는 운영 체험판의 JETANK 예제에서 그리퍼 제어 객체를 선택해 캡처한 1440×880 화면이다.
+- `public/media/maritime-demo.webp`는 DRIFT 공개 저장소의 `aa4862f` 시점 프런트엔드를 공식 예시 데이터와 `VITE_USE_MOCK=true`로 실행한 화면이다. 12시간 후 수색 구역을 선택했으며 지도 저작자 표기를 포함한다. 해커톤 시상 사진은 별도로 제공한다.
+- `public/media/quality-preview.webp`는 가상 데이터 사본 `quality-curves.html`에서 캡처했다. JETANK MP4는 91.13초이며 로컬에서 전체 디코딩을 확인했다.
+- `public/media/so101.webp`와 `public/models/so101.glb`는 아래에 기록한 공식 URDF와 STL로 만들었다. 출처와 변환 내역은 모델 폴더의 `so101-notice.txt`에 있다.
+- 아래 서버 파일 목록과 미완료 항목은 로컬 이관 전 기록이다.
+
 ## 공개와 용도에 관한 확정 사항
 
 - 공개 이메일은 gkdlgustjr00@naver.com이다.

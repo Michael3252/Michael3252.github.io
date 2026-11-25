@@ -1,0 +1,6 @@
+SO-ARM101 follower
+Source: TheRobotStudio/SO-ARM100
+https://github.com/TheRobotStudio/SO-ARM100/tree/141aea7bcac2744d92998e30268c413202a56f96/Simulation/SO101
+Inputs: so101_new_calib.urdf and its referenced visual STL meshes.
+Changes for this portfolio: posed joints, glTF coordinate conversion, mesh welding and simplification, shading, new materials, GLB export and a rendered illustration. The geometry illustrates the mechanism.
+License: Apache License 2.0. The full upstream license is in so101-license.txt.

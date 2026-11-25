@@ -1,0 +1,20 @@
+---
+import Site from "../layouts/site.astro";
+import Card from "./project-card.astro";
+import Icon from "./icon.astro";
+import { projects, fields, type Field } from "../data/portfolio";
+interface Props { field?: Field; }
+const { field } = Astro.props;
+const visible = projects.filter(p => !field || p.field === field);
+const primary = visible.filter(p => p.cover);
+const other = visible.filter(p => !p.cover);
+const tabs = [["/projects/", "전체", projects.length], ...Object.entries(fields).map(([key, label]) => ["/projects/field/" + key + "/", label, projects.filter(p => p.field === key).length])];
+---
+<Site title={field ? fields[field] + " 프로젝트" : "전체 프로젝트"}>
+  <div class="wrap archive page-content">
+    <header class="page-heading"><h1>{field ? fields[field] + " 프로젝트" : "프로젝트"}<span class="count">{visible.length}</span></h1><p>서비스를 설계하고, 데이터를 해석하고, 로봇을 제어한 작업들입니다.</p></header>
+    <nav class="filters" aria-label="프로젝트 분야">{tabs.map(([url,label,count]) => <a href={String(url)} aria-current={Astro.url.pathname === url ? "page" : undefined}>{label}<small>{count}</small></a>)}</nav>
+    {primary.length > 0 && <section aria-label="대표 프로젝트" class="card-grid">{primary.map(p => <Card project={p} />)}</section>}
+    {other.length > 0 && <section class="other-projects"><h2>{primary.length ? "더 많은 프로젝트" : fields[field!]}</h2>{other.map(p => <a href={"/projects/" + p.slug + "/"} class={"project-row theme-" + p.field}><span class="field-label">{fields[p.field]}</span><div><h3>{p.title}</h3><p>{p.summary}</p></div><Icon name="arrow"/></a>)}</section>}
+  </div>
+</Site>

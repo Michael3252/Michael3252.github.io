@@ -1,0 +1,23 @@
+{
+  "name": "hyunseok-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "node scripts/verify-site.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/noto-sans-kr": "5.3.1",
+    "astro": "7.4.13",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/three": "0.187.0",
+    "typescript": "6.0.3"
+  }
+}

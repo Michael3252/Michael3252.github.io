@@ -1,0 +1,21 @@
+---
+import type { Project } from "../data/portfolio";
+import Icon from "./icon.astro";
+import ModelView from "./model-view.astro";
+interface Props { project: Project }
+const { project: p } = Astro.props;
+const demos = [["timeline","검증 일정 타임라인"], ["report","결함과 시험 현황 보고서"], ["comparison","프로젝트별 검증 결과 비교"], ["curves","버그커브와 TC 실행률 비교"]];
+---
+{p.slug === "interface-map" && <figure class="case-figure"><img src="/media/interface-map.webp" width="1440" height="880" loading="lazy" alt={p.coverAlt} /><figcaption>Interface Map 체험판에서 연 JETANK 공정 자동화 예제입니다.</figcaption></figure>}
+{p.slug === "maritime-search" && <div>
+  <figure class="case-figure"><img src="/media/maritime-demo.webp" width="1440" height="900" loading="lazy" alt={p.coverAlt} /><figcaption>현행 DRIFT 데모의 12시간 후 수색 구역입니다. 저장소에서 제공하는 모의 데이터로 실행했습니다.</figcaption></figure>
+  <figure class="case-figure"><img src="/media/hackathon-award.webp" width="1600" height="1067" loading="lazy" alt="해커톤 시상식에서 고용노동부 장관상을 받은 팀" /><figcaption>SSAFY X Kakao Tech Bootcamp AI Hackathon 시상식</figcaption></figure>
+</div>}
+{p.slug === "jetank" && <figure class="case-figure"><video controls playsinline preload="none" poster="/media/jetank-poster.webp" width="1280" height="720" aria-label="JETANK 제조물류 공정 시연"><source src="/media/jetank-demo.mp4" type="video/mp4" /></video><figcaption>JETANK AI Kit 주행과 로봇팔 집기 시연, 1분 31초</figcaption></figure>}
+{p.slug === "quality-platform" && <div>
+  <p>조회 조건을 입력하는 폼과 검증 결과를 정리한 예시입니다. 모든 업무 데이터는 가상 데이터입니다.</p>
+  <div class="demo-links">{demos.map(([slug,label]) => <a href={"/demos/quality-" + slug + ".html"}>{label}<Icon name="arrow" size={16}/></a>)}</div>
+  <div class="quality-images"><figure class="case-figure"><a href="/media/quality-form.webp"><img src="/media/quality-form.webp" alt="검증 데이터 조회 조건을 선택하는 FormHost 폼" width="1000" height="2452" loading="lazy" /></a><figcaption>FormHost 조건 선택 화면. 클릭하면 원본 비율로 볼 수 있습니다.</figcaption></figure><figure class="case-figure"><img src="/media/quality-team.webp" alt="SSAFY 기업연계 프로젝트 참여 단체사진" width="1600" height="1200" loading="lazy" /><figcaption>삼성전자 네트워크사업부 기업연계 프로젝트 참여</figcaption></figure></div>
+</div>}
+{p.slug === "solar-vision" && <div><div class="solar-steps">{[["solar-aerial","원본 항공영상"],["solar-mask","패널 영역 마스크"],["solar-components","연결요소 구분"]].map(([src,label])=><figure class="case-figure"><img src={"/media/"+src+".webp"} width="242" height="242" loading="lazy" alt={label}/><figcaption>{label}</figcaption></figure>)}</div><a href="/media/solar-methods.webp" class="text-link">원본 방법론 보기 <Icon name="arrow" size={15}/></a></div>}
+{p.slug === "umi" && <ModelView/>}

@@ -1,0 +1,15 @@
+---
+interface Props { name: "arrow" | "external" | "file" | "github" | "print" | "mail" | "cube" | "back" | "up"; size?: number; }
+const { name, size = 18 } = Astro.props;
+const paths = {
+  arrow: "M4 12h15m-6-6 6 6-6 6", external: "M6 18 18 6M7 6h11v11",
+  back: "M20 12H5m6-6-6 6 6 6", up: "M12 20V5m-6 6 6-6 6 6",
+  file: "M6 3h8l4 4v14H6z M14 3v5h4 M9 12h6 M9 16h6",
+  print: "M7 8V3h10v5 M7 17H4V9h16v8h-3 M7 14h10v7H7z M16 11h1",
+  mail: "M3 5h18v14H3z M3 6l9 7 9-7",
+  cube: "M12 2 3 7v10l9 5 9-5V7z M3 7l9 5 9-5 M12 12v10"
+};
+---
+<svg width={size} height={size} class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  {name === "github" ? <path fill="currentColor" stroke="none" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.12c-3.09.67-3.74-1.31-3.74-1.31-.5-1.28-1.23-1.63-1.23-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.24.93.1-.72.39-1.21.71-1.49-2.47-.28-5.07-1.24-5.07-5.51 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.14A10.7 10.7 0 0 1 12 6.15c.95 0 1.9.13 2.79.37 2.12-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.28-2.6 5.22-5.08 5.5.4.35.76 1.02.76 2.07v3.09c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/> : <path d={paths[name]} />}
+</svg>
