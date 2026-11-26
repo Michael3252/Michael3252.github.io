@@ -151,9 +151,6 @@ p { color: var(--text); line-height: 1.8; }
 .case-story section+section { margin-top: 30px; }
 .case-story h2 { font-size: 22px; margin-bottom: 8px; }
 .case-story p { font-size: 16px; }
-.case-story .role-note { border-radius: 8px; padding: 20px 24px; background: #edf3fc; }
-.role-note h2 { font-size: 15px; color: #234f95; }
-.role-note p { font-weight: 580; }
 .case-figure { margin-block: 14px 22px; }
 .case-figure a:has(>img) { display: block; cursor: zoom-in; }
 .portrait-figure { max-width: min(100%,320px); }
@@ -254,7 +251,6 @@ p { color: var(--text); line-height: 1.8; }
   .solar-steps { gap: 5px; }
   .section-head .text-link { font-size: 13px; }
   .detail-heading { padding-block: 20px 24px; }
-  .case-story .role-note { padding: 16px; }
   .next-project { grid-template-columns: 1fr auto; gap: 7px; }
   .next-project span { grid-column: 1/-1; }
   .resume-head { align-items: flex-start; gap: 14px; }
@@ -272,23 +268,24 @@ p { color: var(--text); line-height: 1.8; }
 @media (prefers-reduced-motion:reduce) { *, *::before, *::after { transition: none !important; } }
 @page { size: A4; margin: 15mm 16mm; }
 @media print {
+  @page resume { size: A4; margin: 12mm 13mm; }
   :root { --ink: #111c2a; --text: #172638; --muted: #465467; }
   body { background: white; }
   .masthead, .footer, .resume-tools, .skip { display: none; }
-  .wrap.resume { width: 100%; max-width: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 7mm; align-content: start; }
+  .wrap.resume { page: resume; width: 100%; max-width: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 7mm; align-content: start; }
   .resume-head, .cv-section { grid-column: 1 / -1; }
-  .resume-head { padding-bottom: 5mm; gap: 5mm; }
+  .resume-head { padding-bottom: 3mm; gap: 5mm; }
   .resume-head img { width: 18mm; height: 24mm; }
   .resume-head h1 { font-size: 24pt; }
   .resume-head h1 span { display: inline; font-size: 10pt; }
   .resume-head p { font-size: 10pt; margin-block: 2mm; }
   .resume-contacts { font-size: 8.5pt; }
-  .cv-section { display: block; padding-block: 3mm; }
-  .cv-section h2 { font-size: 13pt; margin-bottom: 3mm; }
-  .cv-line { display: grid; grid-template-columns: 34mm 1fr; gap: 3mm; break-inside: avoid; }
-  .cv-line+.cv-line { margin-top: 1.6mm; }
+  .cv-section { display: block; padding-block: 2mm; }
+  .cv-section h2 { font-size: 13pt; margin-bottom: 2mm; }
+  .cv-line { display: grid; grid-template-columns: 26mm 1fr; gap: 2.5mm; break-inside: avoid; }
+  .cv-line+.cv-line { margin-top: 1mm; }
   .cv-line strong { font-size: 10pt; }
-  .cv-line p { font-size: 9pt; line-height: 1.45; }
+  .cv-line p { font-size: 9pt; line-height: 1.35; }
   .cv-line small { font-size: 8pt; }
   .cv-awards, .cv-awards+.cv-section { grid-column: span 1; }
   .cv-awards .cv-line, .qualification-list .cv-line { grid-template-columns: 14mm 1fr; gap: 2mm; }

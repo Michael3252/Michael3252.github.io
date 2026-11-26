@@ -9,10 +9,10 @@ const { p, next } = Astro.props;
 <Site title={p.title} description={p.summary} image={p.cover && "/media/"+p.cover+".webp"}>
   <div class={"wrap detail theme-" + p.field}>
     <a class="back-link" href="/projects/"><Icon name="back" size={15}/>전체 프로젝트</a>
-    <header class="detail-heading"><a class="field-label" href={"/projects/field/"+p.field+"/"}>{fields[p.field]}</a><h1>{p.title}</h1><p>{p.summary}</p></header>
+    <header class="detail-heading"><a class="field-label" href={"/projects/field/"+p.field+"/"}>{fields[p.field]}</a><h1>{p.title}</h1><p>{p.role}</p></header>
     <div class="case-body">
       <aside class="case-meta"><dl>{p.period && <><dt>기간</dt><dd>{p.period}</dd></>}{p.setting && <><dt>참여 형태</dt><dd>{p.setting}</dd></>}{p.award && <><dt>수상</dt><dd>{p.award}</dd></>}<dt>기술과 방법</dt><dd class="tags">{p.tags.map(t=><span>{t}</span>)}</dd></dl>{p.links?.map(([label,href])=><a class="aside-link" href={href}>{label} <Icon name="external" size={14}/></a>)}</aside>
-      <div class="case-story"><section class="role-note"><h2>내가 맡은 일</h2><p>{p.role}</p></section>
+      {(p.reading || p.cover) && <div class="case-story">
         {p.reading?.map(([heading, body, photos]) => <section>
           <h2>{heading}</h2><p>{body}</p>
           {photos?.map(photo => <figure class:list={["case-figure", { "portrait-figure": photo.height > photo.width }]}>
@@ -23,7 +23,7 @@ const { p, next } = Astro.props;
           </figure>)}
         </section>)}
         {p.cover && <section class="case-material"><h2>프로젝트 자료</h2><Media project={p}/></section>}
-      </div>
+      </div>}
     </div>
     <a class="next-project" href={"/projects/"+next.slug+"/"}><span>다음 프로젝트</span><strong>{next.title}</strong><Icon name="arrow" size={23}/></a>
   </div>
