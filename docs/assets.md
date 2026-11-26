@@ -2,6 +2,8 @@
 
 ## 2026.11.26 로컬에서 추가한 자료
 
+- SW 품질 관리 업무 지원 플랫폼의 대표 화면은 `quality-feature-comparison.webp`다. 제공된 `vlog-final.html#/dashboard?pkg=ARC26A&row=a3&view=fc`에서 비교 대상 여섯 개를 선택한 뒤 Feature Comparison 표를 캡처했다. 표에는 가상 데이터가 표시된다.
+
 - 자율주행 택시 상세는 축소 도로 사진, BEV 변환, 도로 표시 세그멘테이션, 가상 GPS 화면을 사용한다. BEV와 세그멘테이션은 각각 다른 장면이다. 공개용 가상 GPS 이미지에서 오른쪽 카메라에 보이는 인물의 얼굴을 흐림 처리했다.
 - UMI 상세의 `umi-simulation.webp`는 시뮬레이션 2.4초, `umi-gripper.webp`는 실제 장비 촬영 12초의 스크린샷이다. 두 화면을 학습 데이터 수집과 실물 구성 설명에 각각 사용한다. SO-ARM101 구조 모델은 UMI 상세의 보조 자료다.
 - 웹 첫 화면과 PDF 표지는 이름과 소개를 중심으로 구성했다. 배포용 PDF는 `public/pdf/kim-hyeonseok-portfolio.pdf`에 있다.

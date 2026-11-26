@@ -24,10 +24,15 @@ for (const route of [...routes, "/404.html"]) {
   const html = read(fileFor(current));
   assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, route + " 제목");
   for (const match of html.matchAll(/\b(?:href|src|poster)="([^"]+)"/g)) {
-    const url = new URL(match[1], current);
+    const url = new URL(match[1].replaceAll("&amp;", "&"), current);
     if (url.origin !== origin) continue;
     const target = fileFor(url);
-    if (url.hash) assert.ok(read(target).includes('id="' + decodeURIComponent(url.hash.slice(1)) + '"'), route + " " + url.hash);
+    if (url.hash.startsWith("#/")) {
+      assert.equal(url.pathname, "/demos/quality-timeline.html");
+      assert.equal(url.hash, "#/dashboard?pkg=ARC26A&row=a3&view=fc");
+    } else if (url.hash) {
+      assert.ok(read(target).includes('id="' + decodeURIComponent(url.hash.slice(1)) + '"'), route + " " + url.hash);
+    }
   }
   const ogImage = html.match(/<meta property="og:image" content="([^"]+)"/);
   assert.ok(ogImage, route + " 미리보기 이미지");
