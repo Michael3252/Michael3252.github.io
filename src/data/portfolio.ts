@@ -1,5 +1,5 @@
 export const contact = { email: "gkdlgustjr00@naver.com", github: "https://github.com/Michael3252" };
-export const fields = { service: "웹서비스", ai: "AI와 데이터", robotics: "로봇과 제어", engineering: "전력 설계" } as const;
+export const fields = { service: "웹서비스", ai: "AI와 데이터", robotics: "로봇과 제어" } as const;
 export type Field = keyof typeof fields;
 interface ProjectPhoto {
   image: string;
@@ -104,12 +104,6 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: "langgraph", title: "LangGraph 기반 질문 분류", field: "ai",
-    summary: "질문의 난도와 유형에 따라 처리 경로를 나누는 흐름을 구성했습니다.",
-    role: "파라미터 수가 작은 모델로 질문을 분류하고, 결과를 LangGraph 처리 흐름에 연결했습니다.",
-    tags: ["LangGraph", "질문 분류"]
-  },
-  {
     slug: "autonomous-taxi", title: "Jetson Orin Nano 기반 자율주행 택시", field: "robotics",
     summary: "축소 도로에서 도로 표시를 인식하고 차량 위치를 추정하는 기능을 개발했습니다.",
     role: "광각 영상을 BEV로 변환하고 YOLO26으로 도로 표시를 인식했습니다. 외부 카메라와 ArUco 마커로 가상 GPS를 구현했습니다.",
@@ -144,12 +138,6 @@ export const projects: Project[] = [
     summary: "전력 수요의 시계열 예측과 잔차 보정을 결합했습니다.",
     role: "LSTM으로 전력 수요를 예측하고, XGBoost로 잔차를 보정하는 모델을 구현했습니다.",
     tags: ["LSTM", "XGBoost"]
-  },
-  {
-    slug: "hvdc", title: "한일 해저 HVDC 송전망 연계 가상 설계", field: "engineering",
-    summary: "한국과 일본을 잇는 해저 고압직류 송전망을 가상으로 설계한 프로젝트입니다.",
-    role: "설계의 깊이와 발표 방향에 관한 의견을 명세서와 요구사항 기준으로 조율하고 팀과 설계 및 발표를 마쳤습니다.",
-    tags: ["HVDC", "요구사항 분석"]
   }
 ];
 

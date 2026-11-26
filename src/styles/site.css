@@ -96,7 +96,6 @@ p { color: var(--text); line-height: 1.8; }
 .theme-service { --field: #2354af; }
 .theme-ai { --field: #167367; }
 .theme-robotics { --field: #975025; }
-.theme-engineering { --field: #6e5392; }
 .card-title { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .card-title h3 { font-size: clamp(19px,1.6vw,25px); line-height: 1.4; font-weight: 760; }
 .card-title .icon { color: #677e92; width: 16px; height: 16px; }

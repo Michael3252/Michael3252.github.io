@@ -9,7 +9,7 @@ const sitemap = read(join(root, "sitemap.xml"));
 const routes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => new URL(match[1]).pathname);
 const details = routes.filter(route => /^\/projects\/[^/]+\/$/.test(route));
 assert.equal(new Set(routes).size, routes.length, "사이트맵 경로 중복");
-assert.equal(details.length, 12, "프로젝트 상세 수");
+assert.equal(details.length, 10, "프로젝트 상세 수");
 assert.equal(readdirSync(join(root, "demos")).filter(name => name.endsWith(".html")).length, 4);
 
 function fileFor(url) {
@@ -50,4 +50,4 @@ for (const [html, photos] of [
 const glb = readFileSync(join(root, "models", "so101.glb"));
 assert.equal(glb.toString("ascii", 0, 4), "glTF");
 assert.equal(glb.readUInt32LE(8), glb.length);
-console.log("검증 완료: 정적 페이지 " + (routes.length + 1) + "개, 프로젝트 상세 12개, 내부 링크와 자료, OG 이미지, 3D 모델");
+console.log(`검증 완료: 정적 페이지 ${routes.length + 1}개, 프로젝트 상세 ${details.length}개, 내부 링크와 자료, OG 이미지, 3D 모델`);
