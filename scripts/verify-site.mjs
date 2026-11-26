@@ -38,6 +38,15 @@ assert.equal((home.match(/class="card-link"/g) || []).length, 6, "홈 대표 프
 const archive = read(join(root, "projects", "index.html"));
 for (const route of details) assert.ok(archive.includes('href="' + route + '"'), "목록 누락 " + route);
 assert.ok(!home.includes(".glb"), "홈에서 3D 모델 선로딩");
+assert.ok(!home.includes("/media/so101.webp"), "홈에 로봇팔 구조 렌더링 노출");
+const umi = read(join(root, "projects", "umi", "index.html"));
+assert.doesNotMatch(umi, /<video\b|\.mp4\b/i, "UMI에는 스크린샷만 게시");
+for (const [html, photos] of [
+  [umi, ["umi-simulation", "umi-gripper"]],
+  [read(join(root, "projects", "autonomous-taxi", "index.html")), ["taxi-road", "taxi-bev", "taxi-segmentation", "taxi-virtual-gps"]]
+]) {
+  for (const photo of photos) assert.ok(html.includes(`src="/media/${photo}.webp"`), "상세 사진 누락 " + photo);
+}
 const glb = readFileSync(join(root, "models", "so101.glb"));
 assert.equal(glb.toString("ascii", 0, 4), "glTF");
 assert.equal(glb.readUInt32LE(8), glb.length);

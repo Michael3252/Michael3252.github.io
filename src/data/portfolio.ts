@@ -1,6 +1,13 @@
 export const contact = { email: "gkdlgustjr00@naver.com", github: "https://github.com/Michael3252" };
 export const fields = { service: "웹서비스", ai: "AI와 데이터", robotics: "로봇과 제어", engineering: "전력 설계" } as const;
 export type Field = keyof typeof fields;
+interface ProjectPhoto {
+  image: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+}
 export interface Project {
   slug: string;
   title: string;
@@ -11,7 +18,7 @@ export interface Project {
   period?: string;
   setting?: string;
   award?: string;
-  reading?: [string, string][];
+  reading?: [string, string, ProjectPhoto[]?][];
   links?: [string, string][];
   cover?: string;
   coverAlt?: string;
@@ -85,10 +92,14 @@ export const projects: Project[] = [
     slug: "umi", title: "UMI 기반 로봇팔 학습 플랫폼", field: "robotics", setting: "시뮬레이션과 실물 실행기",
     summary: "가상 환경에서 수집한 동작으로 정책을 학습하고, 정책 출력을 로봇팔 명령으로 바꾸는 실행기를 구현했습니다.",
     role: "MuJoCo 데이터 수집과 UMI 학습 파이프라인을 검증하고 실제 로봇의 Python 실행기를 구현했습니다.",
-    tags: ["MuJoCo", "Diffusion Policy", "Jetson Orin Nano"], cover: "so101", coverAlt: "SO-ARM101 공식 형상으로 렌더링한 로봇팔 구조 설명 모델",
+    tags: ["MuJoCo", "Diffusion Policy", "Jetson Orin Nano"], cover: "umi-gripper", coverAlt: "휴대폰을 장착한 실제 로봇팔의 그리퍼가 포장 물체를 잡고 있는 모습",
     reading: [
-      ["시뮬레이션에서 수집한 동작", "SO-ARM101과 UMI 핸들의 URDF로 MuJoCo 환경을 구성했습니다. 임의 위치의 물체를 정해진 곳으로 옮기는 동작과 가상 카메라 영상을 수집하고, ArUco 전처리와 ORB-SLAM3를 거쳐 Diffusion Policy 학습까지 파이프라인을 검증했습니다."],
-      ["정책 출력을 실제 로봇 명령으로", "Jetson Orin Nano의 Python 실행기에서 정책의 상대 TCP 목표를 관측 시점 기준으로 베이스 좌표계에 옮겼습니다. 5관절 역기구학으로 관절각을 구하고, 그리퍼 폭과 함께 서보 tick으로 변환해 관절별 허용 범위를 적용한 뒤 UART로 전송했습니다."],
+      ["시뮬레이션에서 수집한 동작", "SO-ARM101과 UMI 핸들의 URDF로 MuJoCo 환경을 구성했습니다. 임의 위치의 물체를 정해진 곳으로 옮기는 동작과 가상 카메라 영상을 수집하고, ArUco 전처리와 ORB-SLAM3를 거쳐 Diffusion Policy 학습까지 파이프라인을 검증했습니다.", [
+        { image: "umi-simulation", width: 1600, height: 600, alt: "MuJoCo 작업대 전체와 캔이 그리퍼 사이에 보이는 근접 시점을 나란히 표시한 화면", caption: "캔에 접근하는 같은 순간을 두 시점에서 봤습니다. 왼쪽은 작업대 전체, 오른쪽은 그리퍼에서 본 화면입니다." }
+      ]],
+      ["정책 출력을 실제 로봇 명령으로", "Jetson Orin Nano의 Python 실행기에서 정책의 상대 TCP 목표를 관측 시점 기준으로 베이스 좌표계에 옮겼습니다. 5관절 역기구학으로 관절각을 구하고, 그리퍼 폭과 함께 서보 tick으로 변환해 관절별 허용 범위를 적용한 뒤 UART로 전송했습니다.", [
+        { image: "umi-gripper", width: 810, height: 1440, alt: "휴대폰이 달린 흰색 로봇팔과 포장 물체를 쥔 검은 그리퍼", caption: "실물 장비 촬영. 그리퍼 위에 장착한 휴대폰과 물체를 잡은 집게가 함께 보입니다." }
+      ]],
       ["실물에서 확인한 제어", "관절별 서보 PID 게인을 조정하고 부하 테스트에서 목표 오차와 떨림 감소를 확인했습니다. 아래 모델은 관절, 그리퍼와 끝단의 위치 관계를 설명하는 공식 형상입니다."]
     ]
   },
@@ -102,7 +113,19 @@ export const projects: Project[] = [
     slug: "autonomous-taxi", title: "Jetson Orin Nano 기반 자율주행 택시", field: "robotics",
     summary: "축소 도로에서 도로 표시를 인식하고 차량 위치를 추정하는 기능을 개발했습니다.",
     role: "광각 영상을 BEV로 변환하고 YOLO26으로 도로 표시를 인식했습니다. 외부 카메라와 ArUco 마커로 가상 GPS를 구현했습니다.",
-    tags: ["Jetson Orin Nano", "YOLO26", "ArUco"]
+    tags: ["Jetson Orin Nano", "YOLO26", "ArUco"],
+    reading: [
+      ["축소 도로를 위에서 바라보는 시점으로", "카메라 앞쪽을 비스듬히 본 영상에는 가까운 횡단보도가 크게, 먼 차선은 좁게 보입니다. 광각 영상을 위에서 내려다본 시점(BEV)으로 변환해 노면 표시의 배치를 읽을 수 있게 했습니다.", [
+        { image: "taxi-road", width: 1440, height: 1080, alt: "축소 도로 교차로를 낮은 시점에서 본 사진. 앞쪽 횡단보도 너머로 화살표와 차선이 보인다.", caption: "축소 도로의 교차로. 가까운 횡단보도와 먼 차선에서 원근 차이가 드러납니다." },
+        { image: "taxi-bev", width: 954, height: 241, alt: "위에서 본 형태로 변환한 축소 도로의 횡단보도와 방향 화살표", caption: "BEV 변환 예시. 검은 부분은 카메라 영상이 투영되지 않은 영역입니다." }
+      ]],
+      ["횡단보도와 정지선을 구분하기", "YOLO26을 학습해 도로 표시가 차지하는 영역을 구분했습니다.", [
+        { image: "taxi-segmentation", width: 954, height: 241, alt: "도로에 색 마스크와 분류명이 겹쳐진 세그멘테이션 결과", caption: "다른 주행 장면의 인식 결과. 횡단보도, 정지선, 점선, 방향 화살표에 분류명이 표시됩니다." }
+      ]],
+      ["외부 카메라로 위치 기준 잡기", "축소 도로 주위에 놓은 ArUco 마커를 외부 카메라로 읽어 차량 위치 추정에 쓰는 가상 GPS를 구현했습니다.", [
+        { image: "taxi-virtual-gps", width: 2400, height: 1286, alt: "외부 카메라 두 대에서 마커 좌표와 공유 마커 4번, 5번을 표시한 화면", caption: "두 카메라가 공유하는 마커는 4번과 5번입니다. 화면 아래에 검출한 마커와 각 카메라의 보정 상태가 표시됩니다." }
+      ]]
+    ]
   },
   {
     slug: "solar-forecast", title: "태양광 발전량 예측", field: "ai",

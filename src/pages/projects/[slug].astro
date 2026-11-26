@@ -13,7 +13,15 @@ const { p, next } = Astro.props;
     <div class="case-body">
       <aside class="case-meta"><dl>{p.period && <><dt>기간</dt><dd>{p.period}</dd></>}{p.setting && <><dt>참여 형태</dt><dd>{p.setting}</dd></>}{p.award && <><dt>수상</dt><dd>{p.award}</dd></>}<dt>기술과 방법</dt><dd class="tags">{p.tags.map(t=><span>{t}</span>)}</dd></dl>{p.links?.map(([label,href])=><a class="aside-link" href={href}>{label} <Icon name="external" size={14}/></a>)}</aside>
       <div class="case-story"><section class="role-note"><h2>내가 맡은 일</h2><p>{p.role}</p></section>
-        {p.reading?.map(([heading,body])=><section><h2>{heading}</h2><p>{body}</p></section>)}
+        {p.reading?.map(([heading, body, photos]) => <section>
+          <h2>{heading}</h2><p>{body}</p>
+          {photos?.map(photo => <figure class:list={["case-figure", { "portrait-figure": photo.height > photo.width }]}>
+            <a href={`/media/${photo.image}.webp`} aria-label={photo.alt + " 크게 보기"}>
+              <img src={`/media/${photo.image}.webp`} width={photo.width} height={photo.height} loading="lazy" alt={photo.alt}/>
+            </a>
+            <figcaption>{photo.caption}</figcaption>
+          </figure>)}
+        </section>)}
         {p.cover && <section class="case-material"><h2>프로젝트 자료</h2><Media project={p}/></section>}
       </div>
     </div>

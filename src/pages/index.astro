@@ -1,19 +1,19 @@
 ---
 import Site from "../layouts/site.astro";
 import Icon from "../components/icon.astro";
-import ArmFigure from "../components/arm-figure.astro";
 import Card from "../components/project-card.astro";
 import { awards, education, featured } from "../data/portfolio";
 ---
 <Site title="홈">
   <section class="hero"><div class="wrap hero-inner">
-    <div class="hero-copy">
+    <div>
       <h1>소프트웨어 개발자<br/><strong>김현석<span class="name-stop">.</span></strong></h1>
-      <p>웹서비스를 만들고 운영합니다.<br class="wide-br"/> AI의 인식과 예측을 실제 로봇의 움직임으로 연결합니다.</p>
-      <div class="hero-actions"><a href="#selected" class="btn primary">대표 프로젝트 보기 <Icon name="arrow"/></a><a href="/resume/" class="btn secondary"><Icon name="file" size={17}/>이력서 보기</a></div>
       <div class="hero-profile"><img src="/media/portrait.webp" width="38" height="47" alt="김현석 프로필 사진"/><div><strong>상명대학교 전기공학 학사</strong><span>삼성청년SW·AI아카데미 15기</span></div></div>
     </div>
-    <ArmFigure />
+    <div class="hero-copy">
+      <p><a href="/projects/field/service/">웹서비스</a>를 만들고 운영합니다.<br/><a href="/projects/field/ai/">AI의 인식과 예측</a>을 실제 <a href="/projects/field/robotics/">로봇의 움직임</a>으로 연결합니다.</p>
+      <div class="hero-actions"><a href="#selected" class="btn primary">대표 프로젝트 보기 <Icon name="arrow"/></a><a href="/resume/" class="btn secondary"><Icon name="file" size={17}/>이력서 보기</a><a class="text-link" href="/pdf/kim-hyeonseok-portfolio.pdf" download>포트폴리오 PDF</a></div>
+    </div>
   </div></section>
   <section class="wrap works" id="selected" aria-labelledby="works-title">
     <div class="section-head"><h2 id="works-title">대표 프로젝트 <span class="count">{String(featured.length).padStart(2,"0")}</span></h2><a class="text-link" href="/projects/">전체 프로젝트 <Icon name="arrow" size={17}/></a></div>
